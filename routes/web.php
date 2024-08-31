@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/emp', function () {
+    return view('empform');
+});
+// Route::post('/add_emp', 'EmpController@create');
+// Route::post('/create','EmpController@create');
+Route::post('create', [EmpController::class, 'create']);
+Route::get('/emplist', [EmpController::class, 'list']);
+
