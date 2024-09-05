@@ -40,7 +40,7 @@ class EmpController extends Controller
     }
 
     public function list (){
-        $emps = emp_info::all();
+        $emps = _emp::all();
 
         return view('emplist', compact('emps'));
     }
